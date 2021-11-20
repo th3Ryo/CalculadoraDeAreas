@@ -4,6 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet"> 
+    <style>
+
+    
+    :root {
+        --white: #FFFFFF;
+        --black: #000000;
+        --very-light-pink: #6e6c6ca6;
+        --text-input-field: #b1b1b1a6;
+        --hospital-green: #ACD9B2;
+        --sm: 0.8rem;
+        --md: 1rem;
+        --lg: 1.2rem;
+        
+    }
+
+    body {
+        margin: 0 2rem 0 2rem;
+        font-family: 'Concert One', cursive;
+        /* overflow: auto; */
+        
+        font-size: var(--md); 
+        text-align: center;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+   /*      grid-template-columns: 1fr 1fr 1fr;
+       
+ */
+
+    }
+
+    .containerSquare {
+        display: flex;
+        flex-direction: column;
+
+        border: 0.25rem;
+        border-radius: 0.25rem;
+        background: orange;
+    }
+
+    .containerSquare p {
+        margin: 0 0 1rem 0;
+
+    }
+
+    .subContainerSquare{
+        margin: 0 0 1rem 0;
+        display: grid;
+        grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
+
+    }
+
+    .sideSquare {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        
+        margin: 0 0.25rem 0.5rem 0.25rem;
+        align-items: center;
+    }
+   
+    .sideSquare p{
+        margin: 0
+        
+    }
+    
+
+
+
+
+
+
+    </style>
+
+    
+    
+    
     <title>CDF </title>
 </head>
 <body>
@@ -13,60 +94,81 @@
         </h1>
         <p>TALLER PRACTICO DE JAVASCRIPT</p>
     </header>
-    <section>
-        <h2>CALCULADORA DE CUADRADO</h2>
-        <form>
-            <label for="inputCuadrado">
-                escribe cuanto mide cada lado de nuestro de CUADRADO
-            </label>
-            <INPut id = "inputCuadrado" type ="number"> </INPut>
-            <button type="button" onclick="calcularPerimetroCuadrado()">
-                calcular perimetro
-            </button>
-            <button type="button" onclick="calcularAreaCuadrado()">
-                calcular Area
-            </button>
-        </form>
-        <h2>CALCULADORA DE TRIANGULO</h2>
-        <form>
-            <label for="inputTriangulo1">
-                escribe cuanto mide el lado 1 de nuestro de triangulo :
-            </label>
-            <INPut id = "inputTriangulo1" type ="number"> </INPut><br>
-           
-            <label for="inputTriangulo2">
-                escribe cuanto mide el lado 2 de nuestro de triangulo :
-            </label>
-            <INPut id = "inputTriangulo2" type ="number"> </INPut><br>
-            
-            <label for="inputTriangulo3">
-                escribe cuanto mide la base de nuestro de triangulo :
-            </label>
-            <INPut id = "inputTriangulo3" type ="number"> </INPut><br>
-            
-            <button type="button" onclick="calcularPerimetroTriangulo()">
-                calcular perimetro
-            </button>
-            <button type="button" onclick="calcularAreaTriangulo()">
-                calcular Area
-            </button>
-        </form>
-    <h2>CALCULADORA DE CIRCULO</h2>
-        <form>
-            <label for="inputCirculo">
-                escribe cuanto mide el radio del circulo :
-            </label>
-            <INPut id = "inputCirculo" type ="number"> </INPut><br>
-           
-            <button type="button" onclick="calcularPerimetroCirculo()">
-                calcular perimetro
-            </button>
-            <button type="button" onclick="calcularAreaCirculo()">
-                calcular Area
-            </button>
-        </form>
-    </section>
-    <script src='./figuras.js'></script>
+    <main class="container">
+            <section class="containerSquare">
+            <h2>CALCULADORA DE CUADRADO</h2>
+            <form class="subContainerSquare">
+                <div>
+                    <p >Digite </p>
+                </div>
+                <div class="sideSquare">
+                    <label for="inputCuadrado">
+                        base  
+                    </label>
+                    <INPut id = "inputCuadrado" type ="number"> </INPut>
+                    <p>Cms</p>
+                </div>
+                <div class="sideSquare">
+                    <label for="inputCuadrado2">
+                        altura
+                    </label>
+                    <INPut id = "inputCuadrado2" type ="number"> </INPut>
+                    <p>Cms</p>
+                </div>
+                <div class="butttonSquare">
+                    <button type="button" onclick="calcularPerimetroCuadrado()">
+                        calcular perimetro
+                    </button>
+                    <button type="button" onclick="calcularAreaCuadrado()">
+                        calcular Area
+                    </button>
+                </div>
+            </form>
+            </section>
+            <section>
+                <h2>CALCULADORA DE TRIANGULO</h2>
+                    <form>
+                        <label for="inputTriangulo1">
+                            escribe cuanto mide el lado 1 de nuestro de triangulo :
+                        </label>
+                        <INPut id = "inputTriangulo1" type ="number"> </INPut><br>
+                    
+                        <label for="inputTriangulo2">
+                            escribe cuanto mide el lado 2 de nuestro de triangulo :
+                        </label>
+                        <INPut id = "inputTriangulo2" type ="number"> </INPut><br>
+                        
+                        <label for="inputTriangulo3">
+                            escribe cuanto mide la base de nuestro de triangulo :
+                        </label>
+                        <INPut id = "inputTriangulo3" type ="number"> </INPut><br>
+                        
+                        <button type="button" onclick="calcularPerimetroTriangulo()">
+                            calcular perimetro
+                        </button>
+                        <button type="button" onclick="calcularAreaTriangulo()">
+                            calcular Area
+                        </button>
+                    </form>
+            </section>
+            <section>
+                <h2>CALCULADORA DE CIRCULO</h2>
+                    <form>
+                        <label for="inputCirculo">
+                            escribe cuanto mide el radio del circulo :
+                        </label>
+                        <INPut id = "inputCirculo" type ="number"> </INPut><br>
+                       
+                        <button type="button" onclick="calcularPerimetroCirculo()">
+                            calcular perimetro
+                        </button>
+                        <button type="button" onclick="calcularAreaCirculo()">
+                            calcular Area
+                        </button>
+                    </form>
+            </section>
+        <script src='./figuras.js'></script>
+    </main>
 
 </body>
 </html>
