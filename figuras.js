@@ -89,11 +89,11 @@ function calcularAreaCuadrado () {
 // triangulo
 function calcularPerimetroTriangulo () {
     const inputt1 = document.getElementById("inputTriangulo1");
-    const valuet1 = parseInt (inputt1.value);      
+    const valuet1 = parseInt(inputt1.value);      
     const inputt2 = document.getElementById("inputTriangulo2");
-    const valuet2 = inputt2.value ;
+    const valuet2 = parseInt(inputt2.value) ;
     const inputt3 = document.getElementById("inputTriangulo3");
-    const valuet3 = inputt3.value ;
+    const valuet3 = parseInt(inputt3.value) ;
     if (valuet1 == valuet2 || valuet1 == valuet3 || valuet2 == valuet3) {
         const perimetrot = perimetroTriangulo(valuet1,valuet2,valuet3);
         alert(perimetrot +" cm");

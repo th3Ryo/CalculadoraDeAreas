@@ -11,11 +11,12 @@
 
     
     :root {
-        --white: #FFFFFF;
-        --black: #000000;
-        --very-light-pink: #6e6c6ca6;
-        --text-input-field: #b1b1b1a6;
-        --hospital-green: #ACD9B2;
+        --blue: #00458a;
+        --orange: #f7931e;
+        --very-light-1: #cb00c4;
+        --very-light-2: #ff592e;
+        --very-light-3: #17f57f ;
+      
         --sm: 0.8rem;
         --md: 1rem;
         --lg: 1.2rem;
@@ -25,6 +26,7 @@
     body {
         margin: 0 2rem 0 2rem;
         font-family: 'Concert One', cursive;
+        background: var(--blue);
         /* overflow: auto; */
         
         font-size: var(--md); 
@@ -36,31 +38,68 @@
         flex-direction: column;
    /*      grid-template-columns: 1fr 1fr 1fr;
        
- */
-
+ */    
     }
 
-    .containerSquare {
+    header {
+        color: white;
+    }
+
+    section {
+        margin-bottom: 2rem;
+        border: solid black;
+        border-radius: 0.75rem;
+    }
+
+    section div:nth-child(1) {
         display: flex;
         flex-direction: column;
 
-        border: 0.25rem;
-        border-radius: 0.25rem;
+        /* border: 0.25rem; */
+        border-radius: 0.75rem;
         background: orange;
     }
 
-    .containerSquare p {
+
+    figure {
+        display: grid;
+        background-color: var(--blue);
+
+        margin: 0;
+        padding: 2rem;
+        border-radius:inherit;
+        
+    }
+
+    figure img {
+        display: grid;
+    }
+
+
+
+    figure p {
         margin: 0 0 1rem 0;
 
     }
 
-    .subContainerSquare{
+    form {
         margin: 0 0 1rem 0;
         display: grid;
         grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
 
     }
 
+    form p{
+        margin: 0
+        
+    }
+
+    form div:nth-child(3) label{
+        rotate: 270deg;
+        margin: 0.5rem;
+    }
+
+    /* cuadrado */
     .sideSquare {
         display: grid;
         grid-template-columns: 25% 50% 25%;
@@ -69,16 +108,69 @@
         align-items: center;
     }
    
-    .sideSquare p{
-        margin: 0
+ 
+    
+    
+    .butttonSquare {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        justify-content: space-evenly;
+
+        margin-top: 0.5rem;
         
     }
+    /* triangulo */
+    .sideTriangle {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        
+        margin: 0 0.25rem 0.5rem 0.25rem;
+        align-items: center;
+    }
+
+    .sideTriangle:nth-child(2) label {
+        rotate: 315deg;
+        margin: 0.5rem;
+    }
+
+    .sideTriangle:nth-child(3) label {
+        rotate: 45deg;
+        margin: 0.5rem;
+    }
+    /* circulo */
+
+    .sideCircle {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        
+        margin: 0 0.25rem 0.5rem 0.25rem;
+        align-items: center;
+    }
+
+    button {
+        
+        border-radius: 8%;
+        border: solid white;
+    }
+
+    div button:nth-child(1) {
+        background-color: var(--very-light-1);
+    }
+    div button:nth-child(2) {
+        background-color: var(--very-light-2);
+    } 
+
     
+    .subContainerCircle {
+        height: 5.625rem;
+    }
 
-
-
-
-
+    @media (min-width: 376px) {
+        .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    }
 
     </style>
 
@@ -96,76 +188,113 @@
     </header>
     <main class="container">
             <section class="containerSquare">
-            <h2>CALCULADORA DE CUADRADO</h2>
-            <form class="subContainerSquare">
-                <div>
-                    <p >Digite </p>
+                <div class="dateSquare">
+                    <h2>CALCULADORA DE CUADRADO</h2>
+                    <form class="subContainerSquare">
+                        <div>
+                            <p >Digite </p>
+                        </div>
+                        <div class="sideSquare">
+                            <label for="inputCuadrado">
+                                base:
+                            </label>
+                            <INPut id = "inputCuadrado" type ="number"> </INPut>
+                            <p>Cms</p>
+                        </div>
+                        <div class="sideSquare">
+                            <label for="inputCuadrado2">
+                                altura:
+                            </label>
+                            <INPut id = "inputCuadrado2" type ="number"> </INPut>
+                            <p>Cms</p>
+                        </div>
+                        <div class="butttonSquare">
+                            <button type="button" onclick="calcularPerimetroCuadrado()">
+                                calcular perimetro
+                            </button>
+                            <button type="button" onclick="calcularAreaCuadrado()">
+                                calcular Area
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="sideSquare">
-                    <label for="inputCuadrado">
-                        base  
-                    </label>
-                    <INPut id = "inputCuadrado" type ="number"> </INPut>
-                    <p>Cms</p>
-                </div>
-                <div class="sideSquare">
-                    <label for="inputCuadrado2">
-                        altura
-                    </label>
-                    <INPut id = "inputCuadrado2" type ="number"> </INPut>
-                    <p>Cms</p>
-                </div>
-                <div class="butttonSquare">
-                    <button type="button" onclick="calcularPerimetroCuadrado()">
-                        calcular perimetro
-                    </button>
-                    <button type="button" onclick="calcularAreaCuadrado()">
-                        calcular Area
-                    </button>
-                </div>
-            </form>
+            <figure>
+                <img src="./img/cuadro.svg" alt="Trangle">
+                <figcaption>triangulo</figcaption>
+            </figure>
             </section>
-            <section>
-                <h2>CALCULADORA DE TRIANGULO</h2>
-                    <form>
-                        <label for="inputTriangulo1">
-                            escribe cuanto mide el lado 1 de nuestro de triangulo :
-                        </label>
-                        <INPut id = "inputTriangulo1" type ="number"> </INPut><br>
+            <section class="containerTriangle">
+                <div class="dateTriangle">
+                    <h2>CALCULADORA DE TRIANGULO</h2>
+                        <form class="subContainerTriangle">
+                            <div>
+                                <p >Digite </p>
+                            </div>
+                            <div class="sideTriangle">
+                                <label for="inputTriangulo1">
+                                    lado 1:
+                                </label>
+                                <INPut id = "inputTriangulo1" type ="number"> </INPut>
+                                <p>Cms</p>
+                            </div>
+                            <div class="sideTriangle">
+                                <label for="inputTriangulo2">
+                                    lado 2:
+                                </label>
+                                <INPut id = "inputTriangulo2" type ="number"> </INPut>
+                                <p>Cms</p>
+                            </div>
+                            <div class="sideTriangle">
+                                <label for="inputTriangulo3">
+                                    lado 3:
+                                </label>
+                                <INPut id = "inputTriangulo3" type ="number"> </INPut>
+                                <p>Cms</p>                 
+                            </div>
+                            <div class="butttonTriangle">                                
+                                <button type="button" onclick="calcularPerimetroTriangulo()">
+                                    calcular perimetro
+                                </button>
+                                <button type="button" onclick="calcularAreaTriangulo()">
+                                    calcular Area
+                                </button>
+                            </div>
+                        </form>
+                </div>
                     
-                        <label for="inputTriangulo2">
-                            escribe cuanto mide el lado 2 de nuestro de triangulo :
-                        </label>
-                        <INPut id = "inputTriangulo2" type ="number"> </INPut><br>
-                        
-                        <label for="inputTriangulo3">
-                            escribe cuanto mide la base de nuestro de triangulo :
-                        </label>
-                        <INPut id = "inputTriangulo3" type ="number"> </INPut><br>
-                        
-                        <button type="button" onclick="calcularPerimetroTriangulo()">
-                            calcular perimetro
-                        </button>
-                        <button type="button" onclick="calcularAreaTriangulo()">
-                            calcular Area
-                        </button>
-                    </form>
-            </section>
-            <section>
+                    <figure>
+                        <img src="./img/triangulo.svg" alt="Triangle">
+                    </figure>
+                </section>
+            <section class="containerCircle">
+                <div class="dateCircle">
                 <h2>CALCULADORA DE CIRCULO</h2>
-                    <form>
-                        <label for="inputCirculo">
-                            escribe cuanto mide el radio del circulo :
-                        </label>
-                        <INPut id = "inputCirculo" type ="number"> </INPut><br>
-                       
-                        <button type="button" onclick="calcularPerimetroCirculo()">
-                            calcular perimetro
-                        </button>
-                        <button type="button" onclick="calcularAreaCirculo()">
-                            calcular Area
-                        </button>
+                    <form class="subContainerCircle">
+                        <div>
+                            <p >Digite </p>
+                        </div>
+                        <div class="sideCircle">
+                            <label for="inputCirculo">
+                                el radio es:
+                            </label>
+                            <INPut id = "inputCirculo" type ="number"> </INPut>
+                            <p>Cms</p>
+                        </div>
+                        <div>
+                            <button type="button" onclick="calcularPerimetroCirculo()">
+                                calcular perimetro
+                            </button>
+                            <button type="button" onclick="calcularAreaCirculo()">
+                                calcular Area
+                            </button>
+                        </div>
                     </form>
+                </div>
+
+                <figure>
+                    <img src="./img/circulo.svg" alt="Circle">
+                </figure>
+
             </section>
         <script src='./figuras.js'></script>
     </main>
