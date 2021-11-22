@@ -149,4 +149,3 @@ function calcularAreaCirculo () {
     return navView.innerHTML = "el Area es: "+areaCi.toFixed(2)+" Cm2";
    
 }
-//ok
