@@ -86,6 +86,7 @@ function calcularPerimetroTriangulo () {
 }
 
 function calcularAreaTriangulo () {
+
     const inputt1 = document.getElementById("inputTriangulo1");
     const valuet1 = parseInt(inputt1.value);      
     const inputt2 = document.getElementById("inputTriangulo2");
@@ -148,3 +149,4 @@ function calcularAreaCirculo () {
     return navView.innerHTML = "el Area es: "+areaCi.toFixed(2)+" Cm2";
    
 }
+//ok
