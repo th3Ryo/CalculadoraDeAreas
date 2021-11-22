@@ -1,0 +1,2 @@
+cuando no sepa medidas de una flexbox colocar auto
+

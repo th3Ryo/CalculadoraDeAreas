@@ -19,7 +19,7 @@
       
         --sm: 0.8rem;
         --md: 1rem;
-        --lg: 1.2rem;
+        --lg: 1.5rem;
         
     }
 
@@ -36,9 +36,6 @@
     .container {
         display: flex;
         flex-direction: column;
-   /*      grid-template-columns: 1fr 1fr 1fr;
-       
- */    
     }
 
     header {
@@ -54,8 +51,6 @@
     section div:nth-child(1) {
         display: flex;
         flex-direction: column;
-
-        /* border: 0.25rem; */
         border-radius: 0.75rem;
         background: orange;
     }
@@ -63,7 +58,7 @@
 
     figure {
         display: grid;
-        background-color: var(--blue);
+        background-color: var(--blue);        
 
         margin: 0;
         padding: 2rem;
@@ -73,6 +68,7 @@
 
     figure img {
         display: grid;
+       
     }
 
 
@@ -89,17 +85,25 @@
 
     }
 
+    
     form p{
         margin: 0
         
     }
+    form div:nth-child(1) {
+        height: 1.2rem;
+    }
 
-    form div:nth-child(3) label{
+
+   
+    
+
+    /* cuadrado */
+    .sideSquare:nth-child(3) label {
         rotate: 270deg;
         margin: 0.5rem;
     }
 
-    /* cuadrado */
     .sideSquare {
         display: grid;
         grid-template-columns: 25% 50% 25%;
@@ -137,6 +141,12 @@
         rotate: 45deg;
         margin: 0.5rem;
     }
+
+    .sideTriangle:nth-child(4) label {
+        
+        margin: 0.5rem;
+    }
+
     /* circulo */
 
     .sideCircle {
@@ -146,11 +156,16 @@
         margin: 0 0.25rem 0.5rem 0.25rem;
         align-items: center;
     }
+    .sideCircle:nth-child(2) label {
+        
+        margin: 0.5rem;
+    }
 
     button {
         
         border-radius: 8%;
         border: solid white;
+        cursor: pointer;
     }
 
     div button:nth-child(1) {
@@ -160,7 +175,11 @@
         background-color: var(--very-light-2);
     } 
 
-    
+    .result{
+        font-size: var(--lg);
+        color: white;
+    }
+
     .subContainerCircle {
         height: 5.625rem;
     }
@@ -169,7 +188,27 @@
         .container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-    }
+        height: 20vh;
+        }
+        section {
+            display: grid; 
+            grid-template-rows: 1fr auto;
+            
+            
+            border: none;
+            margin: 1.5rem;
+        }
+
+        figure {
+            height: 40%;
+        }
+
+        figure img {
+            display: grid;
+            justify-self: center;
+        }
+    
+      
     }
 
     </style>
@@ -218,10 +257,11 @@
                         </div>
                     </form>
                 </div>
-            <figure>
-                <img src="./img/cuadro.svg" alt="Trangle">
-                <figcaption>triangulo</figcaption>
-            </figure>
+                <figure>
+                    <img src="./img/cuadro.svg" alt="Trangle">
+                    <div id="navViewC" class="result">TRIANGULO</div>
+                </figure>
+           
             </section>
             <section class="containerTriangle">
                 <div class="dateTriangle">
@@ -264,6 +304,7 @@
                     
                     <figure>
                         <img src="./img/triangulo.svg" alt="Triangle">
+                        <div id="navViewT" class="result">CUADRADO</div>
                     </figure>
                 </section>
             <section class="containerCircle">
@@ -275,7 +316,7 @@
                         </div>
                         <div class="sideCircle">
                             <label for="inputCirculo">
-                                el radio es:
+                                radio:
                             </label>
                             <INPut id = "inputCirculo" type ="number"> </INPut>
                             <p>Cms</p>
@@ -293,6 +334,7 @@
 
                 <figure>
                     <img src="./img/circulo.svg" alt="Circle">
+                    <div id="navViewCi" class="result">CIRCULO</div>
                 </figure>
 
             </section>
